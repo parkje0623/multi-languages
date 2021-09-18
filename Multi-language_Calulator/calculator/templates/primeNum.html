@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Prime Number </title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}"/>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="/about">About</a>
+        <a href="/cgpa">CGPA Calculator</a>
+        <a href="/factorial">Factorial</a>
+        <a href="/primeNum">Prime Number Calculator</a>
+        <a href="/fibonacci">Fibonacci Calculator</a>
+    </div>
+    
+    <h1>Prime Number Calculator</h1>
+    
+    <div class='container'>
+        <form action="/primeNum_calc" method="post">
+            <p> *** Large numbers may take time ***</p>
+            <label for="prime calc">Is this a prime number?</label> <br>
+            <input type="number" min="0" placeholder="Enter a number" class="current" name="prime_num"/>
+            <p class="error_text"> {{ error1 }} </p>
+            <br><br>
+            <input type="submit" value="Prime" id="calc_button"  name="submit_btn" />
+            <div class="answer">
+                {% if prime_number %}
+                    <p> {{ prime_number }}</p>
+                {% endif %}
+            </div>
+
+            <br><br>
+            <label for="primeCount calc">How many prime numbers?</label> <br>
+            <input type="number" min="0" placeholder="Enter a number" class="current" name="prime_count"/>
+            <p class="error_text"> {{ error2 }} </p>
+            <br><br>
+            <input type="submit" value="Count" id="calc_button" name="submit_btn" />
+            <div class="answer">
+                {% if prime_Count %}
+                    <p> The total number of prime numbers up to the entered number is: {{ prime_Count }}</p>
+                {% endif %}
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>

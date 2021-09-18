@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% if title %}
+        <title> {{ title }} </title>
+    {% else %}
+        <title>CGPA Calculator</title>
+    {% endif %}
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}"/>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="/about">About</a>
+        <a href="/cgpa">CGPA Calculator</a>
+        <a href="/factorial">Factorial</a>
+        <a href="/primeNum">Prime Number Calculator</a>
+        <a href="/fibonacci">Fibonacci Calculator</a>
+    </div>
+
+    <h1>GPA Calculator</h1>
+    <a href="/cgpa" id='selection' class="cgpa_page">
+        <p>CGPA Calculator</p>
+    </a>
+
+    <a href="/target" id='selection' class="target_page"
+        style="background-color: rgb(196, 142, 142); box-shadow: 5px 5px;">
+        <p>Target CGPA Calculator</p>
+    </a>
+    
+    <br><br><br><br>
+    <div class='container'>
+        <form action="/target_cgpa" method="post">
+            <label for="Current cgpa">Current CGPA</label> <br>
+            <input type="number" step=".01" placeholder="0 to 4.33" class="current" name="curr_gpa"/>
+            <p class="error_text"> {{ error1 }} </p>
+            <br><br>
+            <label for="Current units">Total Units Attempted</label> <br>
+            <input type="number" placeholder="" class="current" name="total_unit"/>
+            <p class="error_text"> {{ error2 }} </p>
+            <br><br>
+            <label for="target cgpa">Target CGPA</label> <br>
+            <input type="number" step=".01" placeholder="0 to 4.33" class="current" name="target_gpa"/>
+            <p class="error_text"> {{ error3 }} </p>
+            <br><br>
+            <label for="remain units">Remaining Units</label> <br>
+            <input type="number" placeholder="" class="current" name="remain_unit"/>
+            <p class="error_text"> {{ error4 }} </p>
+            <br><br>
+            <p class="error_text"> {{ error }} </p>
+
+            <input type="submit" value="Calculate" id="calc_button" name="submit_btn" />
+            <input type="submit" value="Reset" id="calc_button" name="submit_btn" />
+            <div class="answer">
+                {% if target_gpa %}
+                    <p>Student must maintain following GPA for remaining units:</p>
+                    <p> {{ target_gpa }} </p>
+                {% endif %}
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>

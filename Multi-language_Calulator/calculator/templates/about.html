@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Main Page </title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}"/>
+</head>
+
+<body>
+    <h1>Various Calculators</h1>
+    <div>
+        <p>This page provides a calculator that can be used to solve various problems.</p>
+        <ul>
+            <li>CGPA Calculator and Target CGPA Calculator for University Students</li>
+                <ul>
+                    <li>
+                        <a href="/cgpa" id='link_route' class="cgpa_page">
+                            <p>CGPA Calculator</p>
+                        </a>
+                    </li>
+                </ul>
+            
+            <li>Factorial Calculator with additional ability to calculate permutaion and combination</li>
+                <ul>
+                    <li>
+                        <a href="/factorial" id='link_route' class="factorial_page">
+                            <p>Factorial Calculator</p>
+                        </a>
+                    </li>
+                </ul>
+            
+            <li>Searching Prime Numbers Calculator (Search all prime numbers up to the provided number)</li>
+                <ul>
+                    <li>
+                        <a href="/primeNum" id='link_route' class="primeNum_page">
+                            <p>Prime Number Calculator</p>
+                        </a>
+                    </li>
+                </ul>
+
+            <li>N-th Fibonacci Calculator</li>
+                <ul>
+                    <li>
+                        <a href="/fibonacci" id='link_route' class="fib_page">
+                            <p> Fibonacci Calculator</p>
+                        </a>
+                    </li>
+                </ul>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+body {
+    background-color: bisque;
+    margin-left: 160px;
+}
+
+label {
+    font-weight: bold;
+}
+
+#selection {
+    float: left;
+    display: inline;
+    background-color: rgb(199, 176, 176);
+    width: 180px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+}
+
+.container {
+    background-color: bisque;
+    margin-left: 10px;
+    padding: 20px;
+    width: 50%;
+}
+
+.current {
+    float: left;
+    display: inline;
+    background-color: rgb(255, 255, 255);
+    width: 180px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+}
+
+p.error_text {
+    color: red;
+}
+
+.sidenav {
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    top: 90px;
+    left: 10px;
+    background: brown;
+    overflow-x: hidden;
+    padding: 8px 0;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #ffd27e;
+  }
+
+#calc_button {
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+.answer {
+    font-size: 24px;
+    font-weight: bold;;
+}

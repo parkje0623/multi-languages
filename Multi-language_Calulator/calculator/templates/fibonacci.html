@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Fibonacci </title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}"/>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="/about">About</a>
+        <a href="/cgpa">CGPA Calculator</a>
+        <a href="/factorial">Factorial</a>
+        <a href="/primeNum">Prime Number Calculator</a>
+        <a href="/fibonacci">Fibonacci Calculator</a>
+    </div>
+    
+    <h1>Fibonacci Calculator</h1>
+    
+    <div class='container'>
+        <form action="/fibonacci_calc" method="post">
+            <label for="fib calc">Enter a number</label> <br>
+            <input type="number" min="0" max="40" placeholder="0 to 40" class="current" name="fib"/>
+            <p class="error_text"> {{ error }} </p>
+            <br><br>
+            <input type="submit" value="Fibonacci" id="calc_button" name="submit_btn" />
+            <div class="answer">
+                {% if Fib_value %}
+                    <p> Result: {{ Fib_value }}</p>
+                {% endif %}
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>

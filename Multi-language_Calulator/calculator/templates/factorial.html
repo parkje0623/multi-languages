@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Factorial </title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}"/>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="/about">About</a>
+        <a href="/cgpa">CGPA Calculator</a>
+        <a href="/factorial">Factorial</a>
+        <a href="/primeNum">Prime Number Calculator</a>
+        <a href="/fibonacci">Fibonacci Calculator</a>
+    </div>
+
+    <h1>Factorial Calculator</h1>
+    
+    <div class='container'>
+        <form action="/factorial_calc" method="post">
+            <p>Formula: n!</p>
+            <label for="fact calc">Enter a number for factorial calculation</label> <br>
+            <input type="number" min="0" max="20" placeholder="0 to 20" class="current" name="fact"/>
+            <p class="error_text"> {{ error1 }} </p>
+            <br><br>
+            <input type="submit" value="Factorial" id="calc_button" name="submit_btn" />
+            <div class="answer">
+                {% if factorial %}
+                    <p> Factorial: {{ factorial }}</p>
+                {% endif %}
+            </div>
+
+            <br><br>
+            <p>Formula: n! / (n - r)!</p>
+            <label for="perm calc">Enter a number for permutation calculation</label> <br>
+            <input type="number" min="0" max="20" placeholder="Total (n) of objects" class="current" name="perm_n"/>
+            <input type="number" min="0" max="20" placeholder="Number of (r) selected" class="current" name="perm_r"/>
+            <p class="error_text"> {{ error2 }} </p>
+            <br><br>
+            <input type="submit" value="Permutation" id="calc_button" name="submit_btn" />
+            <div class="answer">
+                {% if permutation %}
+                    <p> Permutation: {{ permutation }}</p>
+                {% endif %}
+            </div>
+
+            <br><br>
+            <p>Formula: n! / r!(n - r)!</p>
+            <label for="comb calc">Enter a number for combination calculation</label> <br>
+            <input type="number" min="0" max="20" placeholder="Total (n) in the set" class="current" name="comb_n"/>
+            <input type="number" min="0" max="20" placeholder="Number of (r) objects" class="current" name="comb_r"/>
+            <p class="error_text"> {{ error3 }} </p>
+            <br><br>
+            <input type="submit" value="Combination" id="calc_button" name="submit_btn" />
+            <div class="answer">
+                {% if combination %}
+                    <p> Combination: {{ combination }}</p>
+                {% endif %}
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>
