@@ -1,0 +1,9 @@
+1. Do: the returned type after the call operator is used must be Send.
+Why: We used Arc<T> for thread safe sharable ownership, so T must implement Send as well.
+
+2. .shutdown suggests using drain(..) method because we want to remove all pending tasks in the queue, not just iterating through the queue.
+Also, drain(..) yields the removed item (leaving allocation untouched) so that worker threads can be waited to finish and ensure they have exited by calling JoinHandle's .join method.
+
+3. Arc<T> is thread safe to have multiple ownership of the same data, and does not provide thread safety of the data.
+Therefore, Block must be cloned to have sharable (multiple) ownership of Block to be thread safe.
+Preventing errors in concurrent programming 
